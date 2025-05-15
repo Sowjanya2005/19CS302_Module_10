@@ -14,50 +14,54 @@ To write a C function to traverse the linked list and display it in the followin
 7. End.
 ## Program:
 ```
-struct Node{ 
-char data; 
-struct Node *next; 
-}*head; 
- 
- 
-void display() 
-{ 
-struct Node *temp; 
-temp=head; 
-while(temp!=NULL) 
-{ 
-printf("%c\n",temp->data); 
-temp=temp->next; 
-} 
- 
-} 
 /*
 C function to traverse the linked list and display it in the following format.
 
-Developed by: 
-RegisterNumber:  
+Developed by: Sowjanya A
+RegisterNumber:  212222060250
+*/
+#include <stdio.h>
+#include <stdlib.h>
 
+struct Node
+{
+    int data;
+    struct Node* next;
+};
+
+void display(struct Node* head)
+{
+    struct Node* current = head;
+    while(current != NULL)
+    {
+        printf("%d -> ", current->data);
+        current = current->next;
+    }
+    printf("NULL\n");
+}
+
+int main()
+{
+    struct Node* head = (struct Node*)malloc(sizeof(struct Node));
+    struct Node* second = (struct Node*)malloc(sizeof(struct Node));
+    struct Node* third = (struct Node*)malloc(sizeof(struct Node));
+
+    head->data = 10;
+    head->next = second;
+
+    second->data = 20;
+    second->next = third;
+
+    third->data = 30;
+    third->next = NULL;
+
+    display(head);
+
+    return 0;
+}
 ```
-
 ## Output:
-
-head= NULL;
-
-insert('A');
-
-insert('B');
-
-insert('C');
-
-display();
-
-
-A  
-
-B  
-
-C
-
+![image](https://github.com/user-attachments/assets/d089e533-d8cf-4f6e-8c00-0c2ea766872e)
 
 ## Result:
 Thus the program was executed and the output was verified successfully.
